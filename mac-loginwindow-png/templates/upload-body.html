@@ -1,0 +1,27 @@
+{{ template "header.html" }}
+
+<div class="container">
+<p>
+Copy the script below to your terminal to change your LoginWindow image. The script will set the LoginWindow PNG and switch your desktop to the LoginWindow.
+<br />Note: You'll be prompted for your password to get back to your desktop.
+</p>
+<pre><code>
+curl -L {{.PNGURL}} \
+-o /tmp/com.apple.desktop.admin.png && \
+sudo mv /tmp/com.apple.desktop.admin.png /Library/Caches/com.apple.desktop.admin.png && \
+sudo chown root:wheel /Library/Caches/com.apple.desktop.admin.png && \
+sudo chmod 644 /Library/Caches/com.apple.desktop.admin.png && \
+/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend
+
+</code></pre>
+
+<p>
+See the script that converts the image <a href="https://github.com/groob/pngalpha">here</a>.
+</p>
+</div>
+
+{{ template "footer.html" }}
+
+</body>
+</html>
+

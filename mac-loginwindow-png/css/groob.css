@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+    font-family: Roboto, Arial, sans-serif;
+    font-size: large;
+}
+
+.header {
+    padding: 1em;
+    background-color: #3f51b5;
+}
+
+.tab {
+    font-weight: bold;
+    font-size: 2em;
+    color: white;
+    text-decoration: none;
+}
+
+pre {
+    background: #EFEFEF;
+    line-height: 1.4em;
+    font-family: Go, Menlo, monospace;
+    padding: 10px;
+    border-radius: 7px;
+}
+
+img {
+    width: 90%;
+}
+
+.container {
+    max-width: 55rem;
+    margin-left:auto;
+    margin-right:auto;
+}

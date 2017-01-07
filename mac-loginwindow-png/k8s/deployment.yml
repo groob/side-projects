@@ -1,0 +1,26 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+    name: mac-loginwindow-png
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+          app: mac-loginwindow-png
+    spec:
+      containers:
+      - name: mac-loginwindow-png
+        image: gcr.io/groob-io/mac-loginwindow-png:4463b74
+        imagePullPolicy: Always
+        args:
+        volumeMounts:
+        resources:
+          limits:
+            cpu: 100m
+            memory: 500Mi
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        ports:
+        - containerPort: 8080

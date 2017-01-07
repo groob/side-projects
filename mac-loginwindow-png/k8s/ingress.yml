@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: mac-loginwindow-png
+spec:
+  rules:
+  - host: groob.io
+    http:
+      paths:
+      - path: /mac-login-wp
+        backend:
+          serviceName: mac-loginwindow-png
+          servicePort: 80

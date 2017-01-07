@@ -1,0 +1,26 @@
+{{ template "header.html" }}
+
+<div class="container">
+    <h1>Set your loginwindow picture</h1>
+    <p>
+        Apple allows macOS users to set the loginwindow image by replacing the PNG at 
+        <code>/Library/Caches/com.apple.desktop.admin.png</code>
+        Previously, any PNG image would work, but as of 10.12, Apple <a href="http://blog.eriknicolasgomez.com/2016/12/28/managing-sierras-loginwindow-redux/">requires</a> the PNG to have an Alpha channel. This is somewhat annoying, because you need to either have photoshop installed, or a CLI tool like imagemagick. 
+        You can use the form below to convert an image to a PNG with an alpha channel. 
+    </p>
+    <p>
+        Upload a PNG or JPEG image you would like to set as your macOS loginwindow image.
+    </p>
+    <form class="form-upload" method="post" action="/mac-login-wp/upload" enctype="multipart/form-data">
+        <fieldset>
+            <input type="file" name="wallpaper" id="wallpaper">
+            <input type="submit" name="submit" value="Submit">
+        </fieldset>
+    </form>
+    <p> Note: The conversion will take a few seconds, the process is running with severe resource limits on a small Google Cloud Platform instance.
+</div>
+
+{{ template "footer.html" }}
+
+</body>
+</html>
